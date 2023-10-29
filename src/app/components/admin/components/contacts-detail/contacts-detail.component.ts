@@ -14,7 +14,7 @@ export class ContactsDetailComponent implements OnInit {
   user!: Observable<IUser>;
 
   constructor(
-    private activeRouter: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private adminService: AdminService
   ) {}
 
@@ -24,6 +24,6 @@ export class ContactsDetailComponent implements OnInit {
     // this.user = this.adminService.getPerson(this.id);
 
     // with resolver
-    this.user = this.activeRouter.data.pipe(map((data) => data?.['user']));
+    this.user = this.activatedRoute.data.pipe(map((data) => data?.['user']));
   }
 }
